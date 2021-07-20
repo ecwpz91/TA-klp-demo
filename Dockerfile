@@ -5,7 +5,7 @@ FROM ibmcom/websphere-traditional:8.5.5.17-ubi
 
 # put app and scripts and properties in /work/config
 # put external library (e.g db driver) in /work/config/lib
-COPY --chown=was:root defaultapplication.ear /work/config/defaultapplication.ear
+COPY --chown=was:root deployments/defaultapplication.ear /work/config/defaultapplication.ear
 COPY --chown=was:root ./src/config /work/config
 COPY --chown=was:root ./lib /work/config/lib
 RUN /work/configure.sh
